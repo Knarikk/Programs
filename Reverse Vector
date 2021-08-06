@@ -1,0 +1,28 @@
+#include <iostream>
+#include<vector>
+using namespace std;
+
+void reverse(vector<int>& v)
+{
+    
+    std::vector<int> temp;
+    for (unsigned i = 0; i < v.size(); ++i) 
+     {
+        temp.push_back(v[v.size()-1-i]);
+     }
+     for (unsigned i = 0; i < v.size(); ++i)
+      {
+          v[i]=temp[i];      
+      }
+    for (unsigned i = 0; i < v.size(); ++i) 
+    {
+        cout<<v[i]<<" ";
+    }
+
+}
+int main()
+{      
+    vector<int>v  = {1,2,3,4,5,6,7};
+            reverse(v);
+    return 0;
+}
