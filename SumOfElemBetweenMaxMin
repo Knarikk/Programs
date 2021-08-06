@@ -1,0 +1,63 @@
+// զ) առաջին մեծագույն և վերջին փոքրագույն տարրերի միջև գտնվող անդամների գումարը, 
+#include <iostream>
+#include <vector>
+using namespace std;
+  
+ void SumOfElemBetweenMaxMin(  vector<int>  &v )
+  {     int max=-10000,min=10000,imax,imin,sum=0;
+       for(unsigned int i=0;i<v.size();i++)
+       {
+          if(v[i]>max)
+           {
+              max=v[i];
+               imax=i;
+              
+           }
+       
+         
+             if(v[i]<=min)
+            {
+               min=v[i];
+               imin=i;
+           
+            }
+              
+         }
+      
+            cout<<"max elem = "<<max<<" , "<<"imax= "<< imax<<endl;
+            cout<<"min elem = "<<min<<" , "<<"imin= "<< imin<<endl;
+  
+
+           if(imax<imin)
+           {
+             for(int i=imax+1;i<imin;i++)
+             {
+               sum=sum+v[i];
+                 
+             }
+             
+               cout<<"sum="<<sum<<endl;
+           } 
+               if(imax>imin)
+               {
+                for(int i=imin+1;i<imax;i++)
+                {
+                  sum=sum+v[i];
+             
+                }
+                  cout<<"sum="<<sum;
+              } 
+
+  }
+
+  
+  int main()
+    
+{
+     vector<int>v  = {100,100,56,-1,0,-1};
+      SumOfElemBetweenMaxMin(v);
+  
+    return 0;
+}
+
+
