@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+
+   bool  powThree(int x)
+   
+   {  
+      int a;
+       while (x%3==0)
+       {
+          x=x/3;
+           
+       }
+
+       if (x==1)
+           cout<<"is pow 3";
+ 
+       else
+           cout<<"is not pow 3";
+       return false;
+   
+   }
+  int main()
+{
+  powThree(27);
+
+    return 0;
+}
