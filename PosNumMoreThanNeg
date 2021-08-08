@@ -1,0 +1,38 @@
+#include <iostream>
+    #include <vector>
+    using namespace std;
+       void PosNumMoreThanNeg(vector<int> & v)
+
+       {  int pos=0,neg=0;
+          for(int i=0;i<v.size();i++)
+          {   if (v[i]>0)
+                {
+                    pos++;
+                }
+             else if(v[i]<0)
+                {
+                    neg++;
+                }
+          }
+          if(pos==neg)
+            {
+                cout<<"is equal"<<endl;
+            }
+          if (pos>neg)
+           
+            {
+            cout<<"yes";
+            }
+          else if(pos<neg)
+            { 
+                cout<<"no";
+            }
+          return ;            
+       }
+ 
+    int main()
+    {
+        vector<int> v={4,5,5,-4,-9,4,-8,-7,9};
+        PosNumMoreThanNeg(v);
+        return 0;
+    }
