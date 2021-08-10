@@ -1,0 +1,26 @@
+// 1, 2, 3, 4, 5, 6, 7
+// [0 6] a[3] = 4 
+// if < [0,3]
+// else > [4, 6]
+// search 5
+// (0+6) / 2 = 3    5 > a[3] - > [4, 6]
+// (4 + 6) / 2 = 5  5 < a[5] -> [4, 4]
+// a[4] == 5 return 4
+// l + (r - l) / 2
+int BinarySearch(const vector<int> &v, int x)
+{
+    int l = 0;
+    int r = v.size() - 1;
+     while(l<=r)
+     {
+         int m=(l+r)/2;
+         if(v[m]==x) { 
+             return m;
+         } else if(x<v[m]) {
+              r = m - 1;
+         } else {
+             l=m+1;
+         }
+     }
+    return -1;
+}
