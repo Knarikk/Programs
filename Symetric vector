@@ -1,0 +1,22 @@
+  #include <iostream>
+    #include <vector>
+    using namespace std;
+       bool isSymetric(vector<int> & v)
+       {
+           for(unsigned i=0;i<v.size()/2;i++)
+           {
+               if(v[i] != v[v.size() - 1 -i]) 
+               {
+                   return false;
+               }
+
+           }
+           return true;        
+       }
+ 
+    int main()
+    {
+        vector<int> v={1,2,3,0,3,2,1};
+        std::cout << isSymetric(v);
+        return 0;
+    }
