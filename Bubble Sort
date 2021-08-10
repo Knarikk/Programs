@@ -1,0 +1,29 @@
+void Swap(int& a, int& b)
+{
+    int temp;
+    temp=a;
+    a=b;
+    b=temp;
+}
+void BubbleSort(vector <int> &v)
+{
+    for(unsigned i=0;i<v.size()-1;i++)
+    {
+        bool shouldBreak = true;
+        for(unsigned j=0;j<v.size()-i-1;j++)
+        { 
+            if(v[j]>v[j+1])
+            {
+               Swap(v[j],v[j+1]);
+               shouldBreak = false;
+            }
+        }
+        for (unsigned k = 0; k < v.size(); ++k) {
+            std::cout << v[k] << " ";
+        }
+        if (shouldBreak) {
+            break;
+        }
+        std::cout << std::endl;
+    }
+}
