@@ -1,0 +1,10 @@
+void reverse2(vector<int>& v)
+{
+    int temp;
+    for (unsigned i = 0; i < v.size()/2; ++i) 
+    {
+        temp=v[i];
+        v[i]=v[v.size()-i-1];
+        v[v.size()-i-1]=temp;
+    }
+}
