@@ -1,0 +1,55 @@
+ա) այդ թվերի երկուական ներկայացումներում 1-երի և 0-ների քանակների 
+տարբերությունները,*/
+ 
+    #include <iostream>
+    #include <vector>
+    using namespace std;
+       void sub1and0(vector<int> & v)
+         
+       {  int m,difference;
+             for(int i=0;i<v.size();i++)
+                  
+               {   
+                   int count_0=0,count_1=0;
+                   while(v[i]!=0) 
+                 {
+                    if (v[i]%2==0)
+                     {   m=0;
+                        count_0++;
+                        cout<<m;
+                     }
+                    if(v[i]%2!=0)
+                     {
+                         m=1;
+                         count_1++;
+                        cout<<m;
+                     }
+                         v[i]=v[i]/2;
+
+                 }    
+                      
+                 cout<<endl; 
+                 if(count_0>=count_1)
+                   {
+                        difference=count_0-count_1;
+                        cout<<" tarberutyuny= "<<difference<<endl; 
+                   }
+                  if(count_0<count_1)
+                   {
+                        difference=count_1-count_0;
+                        cout<<" tarberutyuny = "<<difference<<endl; 
+                   }
+                  
+
+               }
+              
+                 
+                      
+       }
+ 
+    int main()
+    {
+        vector<int> v={4,5,3,1};
+          sub1and0(v);
+        return 0;
+    }
