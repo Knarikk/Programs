@@ -1,0 +1,28 @@
+  /* 6. Տրված է ամբողջ թվերի հաջորդականություն: Արտածել այդ հաջորդականության
+ա) առաջին միանիշ տարրը,*/
+ 
+    #include <iostream>
+    #include <vector>
+    using namespace std;
+       void FirstOneDigit (vector<int> & v)
+         
+       { 
+             for(unsigned i=0;i<v.size();i++)
+                
+               {   
+                   if(v[i]>=0 && v[i]<=9)
+                   { 
+                     cout<<v[i];
+                     break;
+                   }
+                 
+               }
+                 
+       }
+ 
+    int main()
+    {
+        vector<int> v={454,5,13,10};
+         FirstOneDigit(v);
+        return 0;
+    }
