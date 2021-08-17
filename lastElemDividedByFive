@@ -1,0 +1,24 @@
+      
+/* բ) 5-ին պատիկ վերջին տարրը,*/
+ 
+    #include <iostream>
+    #include <vector>
+    using namespace std;
+      int lastElemDividedByFive (const vector<int>& v)
+      {
+          if (v.empty()) return -1;
+             for(unsigned i=v.size()-1;i>=0;i--)
+             {  
+                 if (v[i]%5==0)
+                     return v[i];
+             }
+                 
+             return -1;
+       }
+ 
+    int main()
+    {
+        vector<int> v{454,5,13,10,14,15,30,74};
+        std::cout << lastElemDividedByFive (v);
+        return 0;
+    }
