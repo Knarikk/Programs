@@ -1,0 +1,41 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+static int singleNumber(const vector<int>& nums)
+    {   
+        for(unsigned i=0;i<nums.size();i++)
+        {  
+            unsigned j;
+             
+            for(j=0;j<nums.size();j++)
+            {
+                if (i!=j && nums[i]==nums[j])
+                    break;                    
+            }
+            
+            if (j == nums.size())
+                return nums[i];
+               
+         }
+
+         return -1;
+    }
+    
+    static int singleNumber2(const vector<int>& nums)
+    {   
+        unsigned x = 0;
+        for(unsigned i=0;i<nums.size();i++)
+        {  
+            x ^= nums[i];       
+        }
+
+        return x;
+    }
+int main()
+{ 
+    vector<int> nums={4,5,1,1,4,5,8};
+    cout<<singleNumber(nums)<<endl;
+    cout<<singleNumber2(nums);
+     
+}
