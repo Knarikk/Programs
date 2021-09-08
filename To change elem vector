@@ -1,10 +1,10 @@
-
 #include <iostream>
-#include<vector>
+
+#include <vector>
 using namespace std;
-  vector<char>arr1={'a','b','c','d','e'};
-    vector<char>arr2={'b','c','d','e','a'};
-    void nkod (char*e)
+  vector<char> arr1;
+  vector<char> arr2;
+ void nkod (char*e)
     { 
         while ((*e))
         {
@@ -20,16 +20,60 @@ using namespace std;
 
         }
     }
-   void dkod()
-   {
 
-   }
+void dkod (char*e)
+
+  { while ((*e))
+        {
+         int i;
+         for(i=0;i<arr2.size();i++)
+
+             if((*e)==arr2[i])  
+            {
+             *e=arr1[i];
+               break;
+            }
+        e++;
+
+        }
+      
+  }
+
 int main()
+{  
+    char ch;
+
+ for(ch=97; ch<=122;ch++)
+   {
+    arr1.push_back(ch);
+   
+   }
+ for(int i=0;i<arr1.size();i++)
+ {
+    cout<<arr1[i]<<" ";
+ }
+    cout<<endl;
+
+   for(ch=98; ch<=122;ch++)
+  {
+    arr2.push_back(ch);
+   
+  }
+  //arr2[arr2.size()]='a';
+ for(int i=0;i<arr2.size();i++)
 {
-  char str[20];
+    cout<<arr2[i]<<" ";
+}
+  cout<<endl;
+  
+char str[20];
   cout<<"Enter string\n";
   cin>>str;
   nkod(str);
   cout<<str;
-  return 0;
+  cout<<endl;
+   dkod (str);
+   cout<<str;
+    return 0;
 }
+
